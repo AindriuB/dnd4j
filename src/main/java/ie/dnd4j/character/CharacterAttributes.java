@@ -18,6 +18,14 @@ public class CharacterAttributes {
     
     private String hair;
     
+    private int movementSpeed;
+    
+    private int flySpeed;
+    
+    private int climbSpeed;
+    
+    private int swimSpeed;
+    
     private Alignment alignment;
 
     public String getName() {
@@ -91,25 +99,45 @@ public class CharacterAttributes {
     public void setAlignment(Alignment alignment) {
         this.alignment = alignment;
     }
-    
-    public CharacterAttributes() {
-	
+
+    public int getMovementSpeed() {
+        return movementSpeed;
     }
 
-    public CharacterAttributes(String name, String gender, int age, String height, int weight, String eyes, String skin,
-	    String hair, Alignment alignment) {
-	super();
-	this.name = name;
-	this.gender = gender;
-	this.age = age;
-	this.height = height;
-	this.weight = weight;
-	this.eyes = eyes;
-	this.skin = skin;
-	this.hair = hair;
-	this.alignment = alignment;
+    public void setMovementSpeed(int movementSpeed) {
+        this.movementSpeed = movementSpeed;
+    }
+
+    public int getFlySpeed() {
+        return flySpeed;
+    }
+
+    public void setFlySpeed(int flySpeed) {
+        this.flySpeed = flySpeed;
+    }
+
+    public int getClimbSpeed() {
+        return climbSpeed;
+    }
+
+    public void setClimbSpeed(int climbSpeed) {
+        this.climbSpeed = climbSpeed;
+    }
+
+    public int getSwimSpeed() {
+        return swimSpeed;
+    }
+
+    public void setSwimSpeed(int swimSpeed) {
+        this.swimSpeed = swimSpeed;
     }
     
+    
+
+    public CharacterAttributes() {
+	super();
+    }    
+
     
     
 }

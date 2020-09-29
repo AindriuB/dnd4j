@@ -13,7 +13,7 @@ public class BaseEntityTest {
 
     @Test
     public void testBaseEntity() {
-	BaseEntity entity = new BaseEntity();
+	BaseEntity entity = new PlayerCharacter();
 	
 	Map<Ability, AbilityScore> abilities = entity.getAbilities();
 	
@@ -29,7 +29,7 @@ public class BaseEntityTest {
     
     @Test
     public void testBaseEntity_standardArray() {
-	BaseEntity entity = new BaseEntity(16,15,14,13,12,11);
+	BaseEntity entity = new PlayerCharacter(16,15,14,13,12,11);
 	
 	Map<Ability, AbilityScore> abilities = entity.getAbilities();
 	

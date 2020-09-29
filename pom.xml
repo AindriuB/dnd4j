@@ -6,7 +6,13 @@
 	<artifactId>dnd4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>DnD for Java</name>
-
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>dnd4j</name>
+			<url>https://github.com/AindriuB/dnd4j</url>
+		</repository>
+	</repositories>
 	<dependencies>
 
 		<dependency>

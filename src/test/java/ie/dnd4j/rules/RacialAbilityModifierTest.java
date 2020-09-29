@@ -1,12 +1,12 @@
 package ie.dnd4j.rules;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import ie.dnd4j.BaseEntity;
+import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
 
 public class RacialAbilityModifierTest {
@@ -15,7 +15,7 @@ public class RacialAbilityModifierTest {
     
     @Before
     public void setUp() {
-	entity = new BaseEntity(11, 11, 11, 11, 11, 11);
+	entity = new PlayerCharacter(11, 11, 11, 11, 11, 11);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class RacialAbilityModifierTest {
     @Test
     public void testApplyRule_Human() {
 
-	entity = new BaseEntity(11, 11, 11, 11, 11, 11);
+	entity = new PlayerCharacter(11, 11, 11, 11, 11, 11);
 	RacialAbilityModifier human = new RacialAbilityModifier(1, 1, 1, 1, 1, 1);
 	human.applyRule(entity);
 	
@@ -56,7 +56,7 @@ public class RacialAbilityModifierTest {
     @Test
     public void testApplyRule_Elf() {
 
-	entity = new BaseEntity(12, 12, 12, 12, 12, 12);
+	entity = new PlayerCharacter(12, 12, 12, 12, 12, 12);
 	RacialAbilityModifier elf = new RacialAbilityModifier(0, 2, 0, 0, 0, 0); 
 	
 	elf.applyRule(entity);

@@ -7,27 +7,24 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
+import ie.dnd4j.builder.CharacterBuilder;
 import ie.dnd4j.character.CharacterAttributes;
+import ie.dnd4j.character.CharacterAttributesBuilder;
+import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
 
-public class BaseEntity implements Calculation {
+public abstract class BaseEntity {
 
    
     private CharacterAttributes attributes;
-    
-    private int movementSpeed;
-    
-    private int flySpeed;
-    
-    private int climbSpeed;
-    
-    private int swimSpeed;
     
     private String vision;
     
     private String deity;
     
     private Race race;
+    
+    private Map<String, BaseClass> classes;
    
     private Map<Ability, AbilityScore> abilities;
     
@@ -56,6 +53,7 @@ public class BaseEntity implements Calculation {
 	weaponProficincies = Collections.emptyList();
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
+	classes = new HashMap<String, BaseClass>();
 	
     }
     
@@ -73,6 +71,7 @@ public class BaseEntity implements Calculation {
 	weaponProficincies = Collections.emptyList();
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
+	classes = new HashMap<String, BaseClass>();
     }
 
 
@@ -106,45 +105,6 @@ public class BaseEntity implements Calculation {
         this.deity = deity;
     }
 
-
-    public int getMovementSpeed() {
-        return movementSpeed;
-    }
-
-
-    public void setMovementSpeed(int movementSpeed) {
-        this.movementSpeed = movementSpeed;
-    }
-
-
-    public int getFlySpeed() {
-        return flySpeed;
-    }
-
-
-    public void setFlySpeed(int flySpeed) {
-        this.flySpeed = flySpeed;
-    }
-
-
-    public int getClimbSpeed() {
-        return climbSpeed;
-    }
-
-
-    public void setClimbSpeed(int climbSpeed) {
-        this.climbSpeed = climbSpeed;
-    }
-
-
-    public int getSwimSpeed() {
-        return swimSpeed;
-    }
-
-
-    public void setSwimSpeed(int swimSpeed) {
-        this.swimSpeed = swimSpeed;
-    }
 
 
     public String getVision() {
@@ -207,10 +167,14 @@ public class BaseEntity implements Calculation {
     }
 
 
-    public void calculate() {
-	
-    }
-    
-    
 
+    public Map<String, BaseClass> getClasses() {
+        return classes;
+    }
+
+
+    public void setClasses(Map<String, BaseClass> classes) {
+        this.classes = classes;
+    }
+       
 }
