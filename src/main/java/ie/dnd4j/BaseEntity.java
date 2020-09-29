@@ -10,7 +10,7 @@ import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.character.CharacterAttributes;
 import ie.dnd4j.race.Race;
 
-public class BaseEntity {
+public class BaseEntity implements Calculation {
 
    
     private CharacterAttributes attributes;
@@ -38,6 +38,8 @@ public class BaseEntity {
     private List<String> toolProficincies;
     
     private List<String> languages;
+    
+    
     
     
     
@@ -202,6 +204,11 @@ public class BaseEntity {
 
     public void setLanguages(List<String> languages) {
         this.languages = languages;
+    }
+
+
+    public void calculate() {
+	
     }
     
     

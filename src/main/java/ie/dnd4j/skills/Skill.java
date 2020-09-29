@@ -2,7 +2,7 @@ package ie.dnd4j.skills;
 
 import ie.dnd4j.abilities.Ability;
 
-public abstract class BaseSkill {
+public abstract class Skill {
     
     private String type;
     

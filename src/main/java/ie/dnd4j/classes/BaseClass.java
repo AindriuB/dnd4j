@@ -2,7 +2,7 @@ package ie.dnd4j.classes;
 
 import java.util.List;
 
-public abstract class BaseClass {
+public class BaseClass {
     
     
     private String type;

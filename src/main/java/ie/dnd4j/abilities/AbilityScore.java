@@ -1,19 +1,34 @@
 package ie.dnd4j.abilities;
 
-public class AbilityScore {
+import ie.dnd4j.Calculation;
+
+public class AbilityScore implements Calculation {
 
     private Ability ability;
     
-    private int score;
+    private int bonus;
+
+    private int total;
+    
+    private int base;
     
     private int modifier;
     
-
-    public AbilityScore(Ability ability, int score) {
+    public AbilityScore(Ability ability, int base) {
 	super();
 	this.ability = ability;
-	this.score = score;
-	this.modifier = ((score - 10 )/ 2);
+	this.base = base;
+	this.total = base + bonus;
+	this.calculate();
+    }
+    
+    public AbilityScore(Ability ability, int bonus, int base) {
+	super();
+	this.ability = ability;
+	this.base = base;
+	this.bonus = bonus;
+	this.total = base + bonus;
+	this.calculate();
     }
     
     public Ability getAbility() {
@@ -25,11 +40,11 @@ public class AbilityScore {
     }
 
     public int getScore() {
-        return score;
+        return base;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setScore(int base) {
+        this.base = base;
     }
 
     public int getModifier() {
@@ -38,6 +53,37 @@ public class AbilityScore {
 
     public void setModifier(int modifier) {
         this.modifier = modifier;
+    }
+
+    public int getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(int bonus) {
+        this.bonus = bonus;
+    }
+    
+    
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
+        this.base = base;
+    }
+
+    public void calculate() {
+	this.total = base + bonus;
+	this.modifier = ((total - 10 )/ 2);
     }
 
 
