@@ -7,9 +7,7 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
-import ie.dnd4j.builder.CharacterBuilder;
 import ie.dnd4j.character.CharacterAttributes;
-import ie.dnd4j.character.CharacterAttributesBuilder;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
 

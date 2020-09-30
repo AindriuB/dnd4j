@@ -1,8 +1,9 @@
 package ie.dnd4j.skills;
 
+import ie.dnd4j.TagableEntity;
 import ie.dnd4j.abilities.Ability;
 
-public abstract class Skill {
+public abstract class Skill extends TagableEntity {
     
     private String type;
     
