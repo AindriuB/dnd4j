@@ -5,11 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ie.dnd4j.EntityBuilder;
-import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.character.Attributes;
+import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.BaseItem;

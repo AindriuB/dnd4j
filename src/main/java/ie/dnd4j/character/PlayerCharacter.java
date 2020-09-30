@@ -1,4 +1,4 @@
-package ie.dnd4j;
+package ie.dnd4j.character;
 
 public class PlayerCharacter extends BaseEntity {
     

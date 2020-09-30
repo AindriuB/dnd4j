@@ -1,6 +1,6 @@
 package ie.dnd4j.rules;
 
-import ie.dnd4j.BaseEntity;
+import ie.dnd4j.character.BaseEntity;
 
 public interface Rule {
     

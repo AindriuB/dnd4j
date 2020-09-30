@@ -1,4 +1,4 @@
-package ie.dnd4j;
+package ie.dnd4j.builder;
 
 public abstract class EntityBuilder<T> {
 

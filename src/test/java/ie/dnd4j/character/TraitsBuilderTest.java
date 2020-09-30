@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import ie.dnd4j.builder.TraitsBuilder;
+
 public class TraitsBuilderTest {
 
     @Test

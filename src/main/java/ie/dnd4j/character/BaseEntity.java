@@ -1,4 +1,4 @@
-package ie.dnd4j;
+package ie.dnd4j.character;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,8 +7,6 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
-import ie.dnd4j.character.Attributes;
-import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
 

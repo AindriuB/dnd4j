@@ -3,9 +3,9 @@ package ie.dnd4j.rules;
 import java.util.HashMap;
 import java.util.Map;
 
-import ie.dnd4j.BaseEntity;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
+import ie.dnd4j.character.BaseEntity;
 
 public class RacialAbilityModifier implements AbilityModifier {
    

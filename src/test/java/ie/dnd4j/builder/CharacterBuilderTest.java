@@ -7,9 +7,9 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 
-import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.Alignment;
+import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;

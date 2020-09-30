@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import ie.dnd4j.BaseEntity;
-import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
+import ie.dnd4j.character.BaseEntity;
+import ie.dnd4j.character.PlayerCharacter;
 
 public class RacialAbilityModifierTest {
     

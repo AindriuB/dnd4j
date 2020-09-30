@@ -1,6 +1,7 @@
-package ie.dnd4j.character;
+package ie.dnd4j.builder;
 
-import ie.dnd4j.EntityBuilder;
+import ie.dnd4j.character.Alignment;
+import ie.dnd4j.character.Traits;
 
 public class TraitsBuilder extends EntityBuilder<Traits> {
     
