@@ -13,8 +13,7 @@ public class BaseClass {
     
     private String description;
     
-    private List<ClassFeature> classFeatures;
-    
+    private List<ClassFeature> classFeatures;    
     
     
     public BaseClass(String type) {
