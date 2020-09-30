@@ -1,6 +1,6 @@
 package ie.dnd4j.character;
 
-public class CharacterAttributes {
+public class Traits {
     
     private String name;
     
@@ -134,7 +134,7 @@ public class CharacterAttributes {
     
     
 
-    public CharacterAttributes() {
+    public Traits() {
 	super();
     }    
 

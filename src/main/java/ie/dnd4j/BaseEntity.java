@@ -7,20 +7,23 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
-import ie.dnd4j.character.CharacterAttributes;
+import ie.dnd4j.character.Attributes;
+import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
 
 public abstract class BaseEntity {
 
    
-    private CharacterAttributes attributes;
+    private Traits traits;
     
     private String vision;
     
     private String deity;
     
     private Race race;
+   
+    private Attributes attributes;
     
     private Map<String, BaseClass> classes;
    
@@ -115,15 +118,6 @@ public abstract class BaseEntity {
     }
 
 
-    public CharacterAttributes getAttributes() {
-        return attributes;
-    }
-
-
-    public void setAttributes(CharacterAttributes attributes) {
-        this.attributes = attributes;
-    }
-
 
     public List<String> getArmourProficincies() {
         return armourProficincies;
@@ -173,6 +167,26 @@ public abstract class BaseEntity {
 
     public void setClasses(Map<String, BaseClass> classes) {
         this.classes = classes;
+    }
+
+
+    public Traits getTraits() {
+        return traits;
+    }
+
+
+    public void setTraits(Traits traits) {
+        this.traits = traits;
+    }
+
+
+    public Attributes getAttributes() {
+        return attributes;
+    }
+
+
+    public void setAttributes(Attributes attributes) {
+        this.attributes = attributes;
     }
        
 }

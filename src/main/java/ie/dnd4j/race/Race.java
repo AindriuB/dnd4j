@@ -55,7 +55,7 @@ public class Race {
     public void setRacialAbilityModifier(RacialAbilityModifier racialAbilityModifier) {
         this.racialAbilityModifier = racialAbilityModifier;
     }
-    
+
     
 
 }

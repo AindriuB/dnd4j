@@ -1,29 +1,37 @@
 package ie.dnd4j.builder;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import ie.dnd4j.EntityBuilder;
 import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
-import ie.dnd4j.character.CharacterAttributes;
+import ie.dnd4j.character.Attributes;
+import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
 
 public class CharacterBuilder extends EntityBuilder<PlayerCharacter>{
     
     private Map<Ability, AbilityScore> abilityScores;
         
-    private CharacterAttributes attributes;
+    private Attributes attributes;
+    
+    private Traits traits;
     
     private Race race;
 
-
     private Map<String,BaseClass> baseClasses;
+    
+    private List<BaseItem> items;
     
     public CharacterBuilder() {
 	baseClasses = new  HashMap<String, BaseClass>();
+	this.items = new ArrayList<BaseItem>();
     }
     
 
@@ -39,8 +47,8 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter>{
 	return this;
     }
     
-    public CharacterBuilder characterAttributes(CharacterAttributes attributes) {
-	this.attributes = attributes;
+    public CharacterBuilder traits(Traits traits) {
+	this.traits = traits;
 	return this;
     }
     
@@ -55,9 +63,35 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter>{
 	return this;
     }
     
+    
+    
+    public CharacterBuilder abilityScores(Map<Ability, AbilityScore> abilityScores) {
+        this.abilityScores = abilityScores;
+        return this;
+    }
+
+
+    public CharacterBuilder attributes(Attributes attributes) {
+        this.attributes = attributes;
+        return this;
+    }
+
+
+
+    public void setBaseClasses(Map<String, BaseClass> baseClasses) {
+        this.baseClasses = baseClasses;
+    }
+    
+    public void withItem(BaseItem item) {
+	this.items.add(item);
+    }
+
+
     public PlayerCharacter build() {
 	
 	PlayerCharacter character = new PlayerCharacter();
+	traits.setMovementSpeed(race.getSpeed());
+	character.setTraits(traits);
 	character.setAttributes(attributes);
 	character.setRace(race);
 	character.setAbilities(abilityScores);
@@ -65,12 +99,15 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter>{
 
 	     
 	
-	//Apply Racials
+	//Apply Racial ability modifiers
 	if(character.getRace() != null) {
 	    character.getRace().getRacialAbilityModifier().applyRule(character);
 	}
 	
-
+	
+	//Apply item modifiers
+	
+	
 	return character;
     }
 

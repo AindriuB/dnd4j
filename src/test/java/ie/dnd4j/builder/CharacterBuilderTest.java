@@ -10,7 +10,7 @@ import org.junit.Test;
 import ie.dnd4j.PlayerCharacter;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.Alignment;
-import ie.dnd4j.character.CharacterAttributes;
+import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.rules.RacialAbilityModifier;
@@ -21,7 +21,7 @@ public class CharacterBuilderTest {
     
     private BaseClass baseClass;
     
-    private CharacterAttributes attributes;
+    private Traits traits;
     
     @Before
     public void setUp() {
@@ -36,19 +36,19 @@ public class CharacterBuilderTest {
 	baseClass.setHitDice(8);
 	baseClass.setLevel(1);
 	
-	attributes = new CharacterAttributes();
-	attributes.setAge(10);
-	attributes.setAlignment(Alignment.CE);
-	attributes.setClimbSpeed(10);
-	attributes.setEyes("blue");
-	attributes.setFlySpeed(20);
-	attributes.setGender("female");
-	attributes.setHair("brown");
-	attributes.setHeight("4ft6");
-	attributes.setMovementSpeed(10);
-	attributes.setName("Test Name");
-	attributes.setSwimSpeed(10);
-	attributes.setWeight(10);
+	traits = new Traits();
+	traits.setAge(10);
+	traits.setAlignment(Alignment.CE);
+	traits.setClimbSpeed(10);
+	traits.setEyes("blue");
+	traits.setFlySpeed(20);
+	traits.setGender("female");
+	traits.setHair("brown");
+	traits.setHeight("4ft6");
+	traits.setMovementSpeed(10);
+	traits.setName("Test Name");
+	traits.setSwimSpeed(10);
+	traits.setWeight(10);
     }
 
     @Test
@@ -58,7 +58,7 @@ public class CharacterBuilderTest {
 	builder.abilityScores(10, 11, 12, 13, 14, 15);
 	builder.addClass(baseClass);
 	builder.race(elf);
-	builder.characterAttributes(attributes);
+	builder.traits(traits);
 	PlayerCharacter character = builder.build();
 	
 	
@@ -77,7 +77,7 @@ public class CharacterBuilderTest {
 	
 	assertEquals(1, character.getClasses().size());
 	assertEquals(baseClass, character.getClasses().get("Rogue"));
-	assertEquals(attributes, character.getAttributes());
+	assertEquals(traits, character.getTraits());
 	
 	assertEquals(elf, character.getRace());
 	

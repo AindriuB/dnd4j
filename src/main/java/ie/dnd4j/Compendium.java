@@ -5,6 +5,7 @@ import java.util.Map;
 
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Language;
+import ie.dnd4j.race.Race;
 import ie.dnd4j.spells.Spell;
 
 public class Compendium {
@@ -14,12 +15,14 @@ public class Compendium {
     private Map<String, Spell> spells;
     private Map<String, Language> languages;
     private Map<String, BaseItem> items;
+    private Map<String, Race> races;
     
     public Compendium(String source) {
 	this.source = source;
 	spells = new HashMap<String, Spell>();
 	languages = new HashMap<String, Language>();
 	items = new HashMap<String, BaseItem>();
+	races = new HashMap<String, Race>();
     }
     
     public Compendium() {
@@ -27,6 +30,7 @@ public class Compendium {
 	spells = new HashMap<String, Spell>();
 	languages = new HashMap<String, Language>();
 	items = new HashMap<String, BaseItem>();
+	races = new HashMap<String, Race>();
     }
     
     public String getSource() {
@@ -52,6 +56,14 @@ public class Compendium {
     }
     public void setItems(Map<String, BaseItem> items) {
         this.items = items;
+    }
+
+    public Map<String, Race> getRaces() {
+        return races;
+    }
+
+    public void setRaces(Map<String, Race> races) {
+        this.races = races;
     }
     
     

@@ -2,9 +2,9 @@ package ie.dnd4j.character;
 
 import ie.dnd4j.EntityBuilder;
 
-public class CharacterAttributesBuilder extends EntityBuilder<CharacterAttributes> {
+public class TraitsBuilder extends EntityBuilder<Traits> {
     
-    private static CharacterAttributesBuilder SELF;
+    private static TraitsBuilder SELF;
     
     private Alignment alignment;
     
@@ -33,93 +33,93 @@ public class CharacterAttributesBuilder extends EntityBuilder<CharacterAttribute
     private int swimSpeed;
     
     
-    public CharacterAttributesBuilder alignment(Alignment alignment) {
+    public TraitsBuilder alignment(Alignment alignment) {
         this.alignment = alignment;
         return this;
     }
 
 
-    public CharacterAttributesBuilder name(String name) {
+    public TraitsBuilder name(String name) {
         this.name = name;
         return this;
     }
 
 
-    public CharacterAttributesBuilder gender(String gender) {
+    public TraitsBuilder gender(String gender) {
         this.gender = gender;
         return this;
     }
 
 
-    public CharacterAttributesBuilder age(int age) {
+    public TraitsBuilder age(int age) {
         this.age = age;
         return this;
     }
 
 
-    public CharacterAttributesBuilder height(String height) {
+    public TraitsBuilder height(String height) {
         this.height = height;
         return this;
     }
 
 
-    public CharacterAttributesBuilder weight(int weight) {
+    public TraitsBuilder weight(int weight) {
         this.weight = weight;
         return this;
     }
 
 
-    public CharacterAttributesBuilder eyes(String eyes) {
+    public TraitsBuilder eyes(String eyes) {
         this.eyes = eyes;
         return this;
     }
 
 
-    public CharacterAttributesBuilder skin(String skin) {
+    public TraitsBuilder skin(String skin) {
         this.skin = skin;
         return this;
     }
 
 
-    public CharacterAttributesBuilder hair(String hair) {
+    public TraitsBuilder hair(String hair) {
         this.hair = hair;
         return this;
     }
 
 
-    public CharacterAttributesBuilder movementSpeed(int movementSpeed) {
+    public TraitsBuilder movementSpeed(int movementSpeed) {
         this.movementSpeed = movementSpeed;
         return this;
     }
 
 
-    public CharacterAttributesBuilder flySpeed(int flySpeed) {
+    public TraitsBuilder flySpeed(int flySpeed) {
         this.flySpeed = flySpeed;
         return this;
     }
 
 
-    public CharacterAttributesBuilder climbSpeed(int climbSpeed) {
+    public TraitsBuilder climbSpeed(int climbSpeed) {
         this.climbSpeed = climbSpeed;
         return this;
     }
 
 
-    public CharacterAttributesBuilder swimSpeed(int swimSpeed) {
+    public TraitsBuilder swimSpeed(int swimSpeed) {
         this.swimSpeed = swimSpeed;
         return this;
     }
 
-    public static CharacterAttributesBuilder getInstance() {
+    public static TraitsBuilder getInstance() {
 	if(SELF == null) {
-	    SELF = new CharacterAttributesBuilder();
+	    SELF = new TraitsBuilder();
 	} 
 	return SELF;
     }
     
     
-    public CharacterAttributes build() {
-	CharacterAttributes characterAttributes = new CharacterAttributes();
+    public Traits build() {
+	Traits characterAttributes = new Traits();
 	characterAttributes.setAge(age);
 	characterAttributes.setAlignment(alignment);
 	characterAttributes.setClimbSpeed(climbSpeed);

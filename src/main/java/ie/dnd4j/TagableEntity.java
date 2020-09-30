@@ -1,28 +1,27 @@
 package ie.dnd4j;
 
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 public abstract class TagableEntity {
 
-    private Map<String, String> tags;
+    private HashSet<String> tags;
 
     public TagableEntity() {
-	tags = new HashMap<String, String>();
+	tags = new HashSet<String>();
     }
 
     public boolean hasTag(String tag) {
-	return tags.containsKey(tag);
+	return tags.contains(tag);
     }
 
     public void tag(String tag) {
-	tags.put(tag, tag);
+	tags.add(tag);
     }
 
     public void tag(List<String> tags) {
 	for (String tag : tags) {
-	    this.tags.put(tag, tag);
+	    this.tags.add(tag);
 	}
     }
 }
