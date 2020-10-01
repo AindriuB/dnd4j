@@ -2,7 +2,7 @@ package ie.dnd4j.race;
 
 import java.util.List;
 
-import ie.dnd4j.rules.RacialAbilityModifier;
+import ie.dnd4j.rules.stats.RacialAbilityModifier;
 
 public class Race {
     

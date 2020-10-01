@@ -13,7 +13,7 @@ import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.race.Race;
-import ie.dnd4j.rules.RacialAbilityModifier;
+import ie.dnd4j.rules.stats.RacialAbilityModifier;
 
 public class CharacterBuilderTest {
     

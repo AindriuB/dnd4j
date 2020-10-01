@@ -8,6 +8,7 @@ import org.junit.Test;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.BaseEntity;
 import ie.dnd4j.character.PlayerCharacter;
+import ie.dnd4j.rules.stats.RacialAbilityModifier;
 
 public class RacialAbilityModifierTest {
     

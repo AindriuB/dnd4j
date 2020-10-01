@@ -4,7 +4,7 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 
-public interface AbilityModifier extends Rule {
+public interface AbilityModifier {
     
     Map<Ability, Integer> getAbilityModifiers();
     

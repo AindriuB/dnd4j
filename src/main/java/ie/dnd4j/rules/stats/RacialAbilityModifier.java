@@ -1,4 +1,4 @@
-package ie.dnd4j.rules;
+package ie.dnd4j.rules.stats;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,8 +6,10 @@ import java.util.Map;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.character.BaseEntity;
+import ie.dnd4j.rules.AbilityModifier;
+import ie.dnd4j.rules.AbstractRule;
 
-public class RacialAbilityModifier implements AbilityModifier {
+public class RacialAbilityModifier extends AbstractRule implements AbilityModifier {
    
     
     private Map<Ability, Integer> abilities;
@@ -26,7 +28,7 @@ public class RacialAbilityModifier implements AbilityModifier {
 	return abilities;
     }
 
-    
+    @Override
     public BaseEntity applyRule(BaseEntity entity) {
 	
 	for(Ability ability: this.abilities.keySet()) {
@@ -36,6 +38,14 @@ public class RacialAbilityModifier implements AbilityModifier {
 	    entity.getAbilities().put(ability, score);
 	}
 	return entity;
+    }
+
+    public Map<Ability, Integer> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(Map<Ability, Integer> abilities) {
+        this.abilities = abilities;
     }
 
 }
