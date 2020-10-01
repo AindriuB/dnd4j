@@ -14,6 +14,8 @@ public class AbilityScore implements Calculation {
     
     private int modifier;
     
+    private int penalty;
+    
     public AbilityScore(Ability ability, int base) {
 	super();
 	this.ability = ability;
@@ -83,6 +85,7 @@ public class AbilityScore implements Calculation {
 
     public void calculate() {
 	this.total = base + bonus;
+	this.total -= penalty;
 	this.modifier = ((total - 10 )/ 2);
     }
 

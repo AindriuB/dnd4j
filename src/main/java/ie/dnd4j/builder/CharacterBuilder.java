@@ -11,8 +11,10 @@ import ie.dnd4j.character.Attributes;
 import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
+import ie.dnd4j.rules.Rule;
 import ie.dnd4j.search.ArmourPredicate;
 import ie.dnd4j.search.Search;
 
@@ -98,16 +100,22 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	}
 
 	// Calculate AC
-	character.getAttributes().setArmourClass(10 + character.getAbilities().get(Ability.DEXTERITY).getModifier());
+
 
 	// Apply item modifiers
+	int baseArmourClass = 10 + character.getAbilities().get(Ability.DEXTERITY).getModifier();
+	character.getAttributes().setArmourClass(baseArmourClass);
+	
 	List<BaseItem> equipedArmour = Search.findAll(character.getEquipedItems(), new ArmourPredicate());
 	if (equipedArmour.size() > 0) {
 	    for (BaseItem armour : equipedArmour) {
-
+		Armour a = (Armour)armour;
+		for(Rule r: a.getRules()) {
+		    r.applyRule(character);
+		}
 	    }
 	}
-
+	
 	return character;
     }
 

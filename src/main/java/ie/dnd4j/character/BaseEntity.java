@@ -195,7 +195,7 @@ public abstract class BaseEntity {
     
     public void addItemToInventory(BaseItem item) {
 	if(item.isEquiped()) {
-	    this.equipedItems.add(item);
+	   equipItem(item);
 	}
 	this.inventory.add(item);
     }

@@ -1,6 +1,10 @@
 package ie.dnd4j.items;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ie.dnd4j.TagableEntity;
+import ie.dnd4j.rules.Rule;
 
 public abstract class BaseItem extends TagableEntity {
 
@@ -28,6 +32,12 @@ public abstract class BaseItem extends TagableEntity {
     private String proficiency;
     
     private boolean equiped;
+    
+    private List<Rule> rules;
+    
+    public BaseItem() {
+	rules = new ArrayList<Rule>();
+    }
 
     public String getName() {
         return name;
@@ -126,6 +136,15 @@ public abstract class BaseItem extends TagableEntity {
         this.equiped = equiped;
     }
     
+    public void addRule(Rule rule) {
+        this.rules.add(rule);
+    }
+    
+
+    public List<Rule> getRules() {
+        return rules;
+    }
+    
 
     @Override
     public int hashCode() {
@@ -211,7 +230,7 @@ public abstract class BaseItem extends TagableEntity {
 	    return false;
 	return true;
     }
-    
+
     
     
     
