@@ -1,13 +1,16 @@
 package ie.dnd4j.character;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
 
 public abstract class BaseEntity {
@@ -35,8 +38,9 @@ public abstract class BaseEntity {
     
     private List<String> languages;
     
-    
-    
+    private List<BaseItem> inventory;
+
+    private HashSet<BaseItem> equipedItems;
     
     
     public BaseEntity() {
@@ -53,6 +57,8 @@ public abstract class BaseEntity {
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
 	classes = new HashMap<String, BaseClass>();
+	inventory = new ArrayList<BaseItem>();
+	equipedItems = new HashSet<BaseItem>();
 	
     }
     
@@ -185,6 +191,50 @@ public abstract class BaseEntity {
 
     public void setAttributes(Attributes attributes) {
         this.attributes = attributes;
+    }
+    
+    public void addItemToInventory(BaseItem item) {
+	if(item.isEquiped()) {
+	    this.equipedItems.add(item);
+	}
+	this.inventory.add(item);
+    }
+    
+    public void equipItem(BaseItem item) {
+	if(inventory.contains(item)) {
+	    equipedItems.add(item);
+	}
+    }
+    
+    public void unequipItem(BaseItem item) {
+	if(equipedItems.contains(item)) {
+	    equipedItems.remove(item);
+	}
+    }
+
+
+    public List<BaseItem> getInventory() {
+        return inventory;
+    }
+
+
+    public void setInventory(List<BaseItem> inventory) {
+        this.inventory = inventory;
+        for(BaseItem item : this.inventory) {
+            if(item.isEquiped()) {
+        	equipItem(item);
+            }
+        }
+    }
+
+
+    public HashSet<BaseItem> getEquipedItems() {
+        return equipedItems;
+    }
+
+
+    public void setEquipedItems(HashSet<BaseItem> equipedItems) {
+        this.equipedItems = equipedItems;
     }
        
 }
