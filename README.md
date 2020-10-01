@@ -27,4 +27,4 @@ See [dnd4j-tools](https://github.com/AindriuB/dnd4j-tools) for compendium builde
 
 ### Compatibility
 
-java 1.6
+This library is built for java 1.6 onwards.
