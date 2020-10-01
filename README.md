@@ -23,3 +23,8 @@ PlayerCharacter character = builder.build();
 
 ### Compendiums
 See [dnd4j-tools](https://github.com/AindriuB/dnd4j-tools) for compendium builders that can use this library. 
+
+
+### Compatibility
+
+java 1.6
