@@ -90,7 +90,7 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
 
     @Test
     public void testBuild() {
-	CharacterBuilder builder = new CharacterBuilder();
+	CharacterBuilder builder = CharacterBuilder.getInstance();
 	
 	builder.abilityScores(10, 11, 12, 13, 14, 15);
 	builder.addClass(baseClass);

@@ -39,6 +39,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	this.items = new ArrayList<BaseItem>();
     }
 
+   
     public CharacterBuilder abilityScores(int strength, int dexterity, int constitution, int intelligence, int wisdom,
 	    int charisma) {
 	abilityScores = new HashMap<Ability, AbilityScore>();
@@ -50,6 +51,11 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	abilityScores.put(Ability.CHARISMA, new AbilityScore(Ability.CHARISMA, charisma));
 
 	return this;
+    }
+    
+    
+    public static CharacterBuilder getInstance() {
+	return new CharacterBuilder();
     }
 
     public CharacterBuilder traits(Traits traits) {
