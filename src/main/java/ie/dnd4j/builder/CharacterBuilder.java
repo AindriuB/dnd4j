@@ -105,7 +105,6 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	// Apply item modifiers
 	int baseArmourClass = 10 + character.getAbilities().get(Ability.DEXTERITY).getModifier();
 	character.getAttributes().setArmourClass(baseArmourClass);
-	
 	List<BaseItem> equipedArmour = Search.findAll(character.getEquipedItems(), new ArmourPredicate());
 	if (equipedArmour.size() > 0) {
 	    for (BaseItem armour : equipedArmour) {

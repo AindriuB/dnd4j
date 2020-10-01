@@ -1,0 +1,128 @@
+{
+  "traits" : {
+    "name" : "Test Name",
+    "gender" : "female",
+    "age" : 10,
+    "height" : "4ft6",
+    "weight" : 10,
+    "eyes" : "blue",
+    "hair" : "brown",
+    "movementSpeed" : 30,
+    "flySpeed" : 20,
+    "climbSpeed" : 10,
+    "swimSpeed" : 10,
+    "alignment" : "CE"
+  },
+  "race" : {
+    "name" : "Elf",
+    "speed" : 30,
+    "language" : [ "common", "elvish" ],
+    "racialAbilityModifier" : {
+      "dependencies" : [ ],
+      "abilityModifiers" : {
+        "DEXTERITY" : 2,
+        "INTELLIGENCE" : 0,
+        "CHARISMA" : 0,
+        "WISDOM" : 0,
+        "STRENGTH" : 0,
+        "CONSTITUTION" : 0
+      }
+    }
+  },
+  "attributes" : {
+    "armourClass" : 14,
+    "hitPoints" : 10,
+    "speed" : 0,
+    "spellDifficultyClass" : 0
+  },
+  "classes" : {
+    "Rogue" : {
+      "type" : "Rogue",
+      "level" : 1,
+      "hitDice" : 8,
+      "description" : "Rogue"
+    }
+  },
+  "abilities" : {
+    "DEXTERITY" : {
+      "ability" : "DEXTERITY",
+      "bonus" : 2,
+      "total" : 13,
+      "base" : 11,
+      "modifier" : 1,
+      "score" : 11
+    },
+    "INTELLIGENCE" : {
+      "ability" : "INTELLIGENCE",
+      "bonus" : 0,
+      "total" : 13,
+      "base" : 13,
+      "modifier" : 1,
+      "score" : 13
+    },
+    "CHARISMA" : {
+      "ability" : "CHARISMA",
+      "bonus" : 0,
+      "total" : 15,
+      "base" : 15,
+      "modifier" : 2,
+      "score" : 15
+    },
+    "WISDOM" : {
+      "ability" : "WISDOM",
+      "bonus" : 0,
+      "total" : 14,
+      "base" : 14,
+      "modifier" : 2,
+      "score" : 14
+    },
+    "STRENGTH" : {
+      "ability" : "STRENGTH",
+      "bonus" : 0,
+      "total" : 10,
+      "base" : 10,
+      "modifier" : 0,
+      "score" : 10
+    },
+    "CONSTITUTION" : {
+      "ability" : "CONSTITUTION",
+      "bonus" : 0,
+      "total" : 12,
+      "base" : 12,
+      "modifier" : 1,
+      "score" : 12
+    }
+  },
+  "armourProficincies" : [ ],
+  "weaponProficincies" : [ ],
+  "toolProficincies" : [ ],
+  "languages" : [ ],
+  "inventory" : [ {
+    "name" : "Studded Leather",
+    "slot" : "body",
+    "cost" : 10,
+    "category" : "Armour",
+    "currency" : "gp",
+    "equiped" : true,
+    "rules" : [ {
+      "dependencies" : [ ],
+      "type" : "LIGHT",
+      "armourClass" : 13
+    } ],
+    "armour" : "Light"
+  } ],
+  "equipedItems" : [ {
+    "name" : "Studded Leather",
+    "slot" : "body",
+    "cost" : 10,
+    "category" : "Armour",
+    "currency" : "gp",
+    "equiped" : true,
+    "rules" : [ {
+      "dependencies" : [ ],
+      "type" : "LIGHT",
+      "armourClass" : 13
+    } ],
+    "armour" : "Light"
+  } ]
+}

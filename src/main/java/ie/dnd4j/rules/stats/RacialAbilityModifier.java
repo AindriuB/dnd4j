@@ -40,9 +40,6 @@ public class RacialAbilityModifier extends AbstractRule implements AbilityModifi
 	return entity;
     }
 
-    public Map<Ability, Integer> getAbilities() {
-        return abilities;
-    }
 
     public void setAbilities(Map<Ability, Integer> abilities) {
         this.abilities = abilities;

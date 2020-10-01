@@ -8,7 +8,7 @@ public class Attributes {
     
     private int speed;
     
-    private int spellDificultyClass;
+    private int spellDifficultyClass;
 
     public int getArmourClass() {
         return armourClass;
@@ -34,12 +34,12 @@ public class Attributes {
         this.speed = speed;
     }
 
-    public int getSpellDificultyClass() {
-        return spellDificultyClass;
+    public int getSpellDifficultyClass() {
+        return spellDifficultyClass;
     }
 
-    public void setSpellDificultyClass(int spellDificultyClass) {
-        this.spellDificultyClass = spellDificultyClass;
+    public void setSpellDifficultyClass(int spellDifficultyClass) {
+        this.spellDifficultyClass = spellDifficultyClass;
     }
     
     

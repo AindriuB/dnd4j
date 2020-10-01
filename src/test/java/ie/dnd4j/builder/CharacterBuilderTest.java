@@ -7,15 +7,20 @@ import java.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 
+import ie.dnd4j.JsonFileWriterTest;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.Alignment;
+import ie.dnd4j.character.Attributes;
 import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.items.Armour;
+import ie.dnd4j.items.ArmourType;
 import ie.dnd4j.race.Race;
+import ie.dnd4j.rules.stats.ArmourClassRule;
 import ie.dnd4j.rules.stats.RacialAbilityModifier;
 
-public class CharacterBuilderTest {
+public class CharacterBuilderTest extends JsonFileWriterTest {
     
     private Race elf;
     
@@ -23,6 +28,9 @@ public class CharacterBuilderTest {
     
     private Traits traits;
     
+    private Armour armour;
+
+    private Attributes attributes;
     @Before
     public void setUp() {
 	elf = new Race();
@@ -49,6 +57,21 @@ public class CharacterBuilderTest {
 	traits.setName("Test Name");
 	traits.setSwimSpeed(10);
 	traits.setWeight(10);
+	
+	attributes = new Attributes();
+	attributes.setHitPoints(10);
+	
+	
+	
+	armour = new Armour();
+	armour.setArmour("Light");
+	armour.setName("Studded Leather");
+	armour.setCategory("Armour");
+	armour.setCost(10);
+	armour.setCurrency("gp");
+	armour.setEquiped(true);
+	armour.setSlot("body");
+	armour.addRule(new ArmourClassRule(13, ArmourType.forString(armour.getArmour())));
     }
 
     @Test
@@ -58,7 +81,10 @@ public class CharacterBuilderTest {
 	builder.abilityScores(10, 11, 12, 13, 14, 15);
 	builder.addClass(baseClass);
 	builder.race(elf);
+	builder.attributes(attributes);
 	builder.traits(traits);
+	builder.withItem(armour);
+	
 	PlayerCharacter character = builder.build();
 	
 	
@@ -80,6 +106,9 @@ public class CharacterBuilderTest {
 	assertEquals(traits, character.getTraits());
 	
 	assertEquals(elf, character.getRace());
+	
+
+	writeOutput(character, "src/test/resources/test-output/character.json");
 	
     }
 
