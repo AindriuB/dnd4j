@@ -13,9 +13,11 @@ import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.BaseItem;
+import ie.dnd4j.items.Item;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.rules.Rule;
 import ie.dnd4j.search.ArmourPredicate;
+import ie.dnd4j.search.ItemPredicate;
 import ie.dnd4j.search.Search;
 
 public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
@@ -100,16 +102,24 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	}
 
 	// Calculate AC
-
-
 	// Apply item modifiers
-	int baseArmourClass = 10 + character.getAbilities().get(Ability.DEXTERITY).getModifier();
-	character.getAttributes().setArmourClass(baseArmourClass);
 	List<BaseItem> equipedArmour = Search.findAll(character.getEquipedItems(), new ArmourPredicate());
 	if (equipedArmour.size() > 0) {
 	    for (BaseItem armour : equipedArmour) {
 		Armour a = (Armour)armour;
 		for(Rule r: a.getRules()) {
+		    r.applyRule(character);
+		}
+	    }
+	}
+	
+	// Calculate AC
+	// Apply item modifiers
+	List<BaseItem> equipedItems = Search.findAll(character.getEquipedItems(), new ItemPredicate());
+	if (equipedArmour.size() > 0) {
+	    for (BaseItem item : equipedItems) {
+		Item i = (Item)item;
+		for(Rule r: i.getRules()) {
 		    r.applyRule(character);
 		}
 	    }

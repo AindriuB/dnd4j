@@ -20,17 +20,17 @@
     "racialAbilityModifier" : {
       "dependencies" : [ ],
       "abilityModifiers" : {
-        "DEXTERITY" : 2,
-        "INTELLIGENCE" : 0,
-        "CHARISMA" : 0,
-        "WISDOM" : 0,
         "STRENGTH" : 0,
-        "CONSTITUTION" : 0
+        "CONSTITUTION" : 0,
+        "WISDOM" : 0,
+        "CHARISMA" : 0,
+        "INTELLIGENCE" : 0,
+        "DEXTERITY" : 2
       }
     }
   },
   "attributes" : {
-    "armourClass" : 14,
+    "armourClass" : 15,
     "hitPoints" : 10,
     "speed" : 0,
     "spellDifficultyClass" : 0
@@ -44,38 +44,6 @@
     }
   },
   "abilities" : {
-    "DEXTERITY" : {
-      "ability" : "DEXTERITY",
-      "bonus" : 2,
-      "total" : 13,
-      "base" : 11,
-      "modifier" : 1,
-      "score" : 11
-    },
-    "INTELLIGENCE" : {
-      "ability" : "INTELLIGENCE",
-      "bonus" : 0,
-      "total" : 13,
-      "base" : 13,
-      "modifier" : 1,
-      "score" : 13
-    },
-    "CHARISMA" : {
-      "ability" : "CHARISMA",
-      "bonus" : 0,
-      "total" : 15,
-      "base" : 15,
-      "modifier" : 2,
-      "score" : 15
-    },
-    "WISDOM" : {
-      "ability" : "WISDOM",
-      "bonus" : 0,
-      "total" : 14,
-      "base" : 14,
-      "modifier" : 2,
-      "score" : 14
-    },
     "STRENGTH" : {
       "ability" : "STRENGTH",
       "bonus" : 0,
@@ -91,6 +59,38 @@
       "base" : 12,
       "modifier" : 1,
       "score" : 12
+    },
+    "WISDOM" : {
+      "ability" : "WISDOM",
+      "bonus" : 0,
+      "total" : 14,
+      "base" : 14,
+      "modifier" : 2,
+      "score" : 14
+    },
+    "CHARISMA" : {
+      "ability" : "CHARISMA",
+      "bonus" : 0,
+      "total" : 15,
+      "base" : 15,
+      "modifier" : 2,
+      "score" : 15
+    },
+    "INTELLIGENCE" : {
+      "ability" : "INTELLIGENCE",
+      "bonus" : 0,
+      "total" : 13,
+      "base" : 13,
+      "modifier" : 1,
+      "score" : 13
+    },
+    "DEXTERITY" : {
+      "ability" : "DEXTERITY",
+      "bonus" : 2,
+      "total" : 13,
+      "base" : 11,
+      "modifier" : 1,
+      "score" : 11
     }
   },
   "armourProficincies" : [ ],
@@ -110,6 +110,17 @@
       "armourClass" : 13
     } ],
     "armour" : "Light"
+  }, {
+    "name" : "Ring or protection",
+    "slot" : "body",
+    "cost" : 10,
+    "category" : "Ring",
+    "currency" : "gp",
+    "equiped" : true,
+    "rules" : [ {
+      "dependencies" : [ ],
+      "buff" : 1
+    } ]
   } ],
   "equipedItems" : [ {
     "name" : "Studded Leather",
@@ -124,5 +135,16 @@
       "armourClass" : 13
     } ],
     "armour" : "Light"
+  }, {
+    "name" : "Ring or protection",
+    "slot" : "body",
+    "cost" : 10,
+    "category" : "Ring",
+    "currency" : "gp",
+    "equiped" : true,
+    "rules" : [ {
+      "dependencies" : [ ],
+      "buff" : 1
+    } ]
   } ]
 }

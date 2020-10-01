@@ -16,7 +16,9 @@ import ie.dnd4j.character.Traits;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.ArmourType;
+import ie.dnd4j.items.Item;
 import ie.dnd4j.race.Race;
+import ie.dnd4j.rules.stats.ArmourClassBuffRule;
 import ie.dnd4j.rules.stats.ArmourClassRule;
 import ie.dnd4j.rules.stats.RacialAbilityModifier;
 
@@ -29,6 +31,8 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
     private Traits traits;
     
     private Armour armour;
+    
+    private Item item;
 
     private Attributes attributes;
     @Before
@@ -72,6 +76,16 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
 	armour.setEquiped(true);
 	armour.setSlot("body");
 	armour.addRule(new ArmourClassRule(13, ArmourType.forString(armour.getArmour())));
+	
+	
+	item = new Item();
+	item.setName("Ring or protection");
+	item.setCategory("Ring");
+	item.setCost(10);
+	item.setCurrency("gp");
+	item.setEquiped(true);
+	item.setSlot("body");
+	item.addRule(new ArmourClassBuffRule(1));
     }
 
     @Test
@@ -84,6 +98,7 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
 	builder.attributes(attributes);
 	builder.traits(traits);
 	builder.withItem(armour);
+	builder.withItem(item);
 	
 	PlayerCharacter character = builder.build();
 	
