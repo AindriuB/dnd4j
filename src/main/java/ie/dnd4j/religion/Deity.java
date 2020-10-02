@@ -87,6 +87,5 @@ public class Deity extends TagableEntity {
         this.source = source;
     }
     
-    
 
 }
