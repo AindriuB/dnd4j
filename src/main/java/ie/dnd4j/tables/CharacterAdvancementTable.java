@@ -3,18 +3,7 @@ package ie.dnd4j.tables;
 public class CharacterAdvancementTable {
 
     public static int proficienyBonus(int level) {
-	int base = 2;
-	if (level <= 4) {
-	    return base;
-	} else if (level > 4 && level <= 8) {
-	    return base + 1;
-	} else if (level > 8 && level <= 12) {
-	    return base + 2;
-	} else if (level > 12 && level <= 16) {
-	    return base + 3;
-	} else {
-	    return base + 4;
-	}
+	return (int) Math.ceil(level / 4.0f) + 1; 
     }
 
     public static int experiencePoints(int level) {
