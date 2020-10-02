@@ -8,7 +8,7 @@ import org.junit.Test;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.BaseEntity;
 import ie.dnd4j.character.PlayerCharacter;
-import ie.dnd4j.rules.stats.RacialAbilityModifier;
+import ie.dnd4j.rules.stats.RacialAbilityModifierRule;
 
 public class RacialAbilityModifierTest {
     
@@ -21,7 +21,7 @@ public class RacialAbilityModifierTest {
 
     @Test
     public void testRacialAbilityModifier() {
-	RacialAbilityModifier human = new RacialAbilityModifier(1, 1, 1, 1, 1, 1);
+	RacialAbilityModifierRule human = new RacialAbilityModifierRule(1, 1, 1, 1, 1, 1);
 	assertEquals(1, human.getAbilityModifiers().get(Ability.STRENGTH).intValue());
 	assertEquals(1, human.getAbilityModifiers().get(Ability.DEXTERITY).intValue());
 	assertEquals(1, human.getAbilityModifiers().get(Ability.CONSTITUTION).intValue());
@@ -34,7 +34,7 @@ public class RacialAbilityModifierTest {
     public void testApplyRule_Human() {
 
 	entity = new PlayerCharacter(11, 11, 11, 11, 11, 11);
-	RacialAbilityModifier human = new RacialAbilityModifier(1, 1, 1, 1, 1, 1);
+	RacialAbilityModifierRule human = new RacialAbilityModifierRule(1, 1, 1, 1, 1, 1);
 	human.applyRule(entity);
 	
 	assertEquals(12, entity.getAbilities().get(Ability.STRENGTH).getTotal());
@@ -58,7 +58,7 @@ public class RacialAbilityModifierTest {
     public void testApplyRule_Elf() {
 
 	entity = new PlayerCharacter(12, 12, 12, 12, 12, 12);
-	RacialAbilityModifier elf = new RacialAbilityModifier(0, 2, 0, 0, 0, 0); 
+	RacialAbilityModifierRule elf = new RacialAbilityModifierRule(0, 2, 0, 0, 0, 0); 
 	
 	elf.applyRule(entity);
 	

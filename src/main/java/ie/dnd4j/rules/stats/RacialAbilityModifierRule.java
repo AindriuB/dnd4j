@@ -9,12 +9,12 @@ import ie.dnd4j.character.BaseEntity;
 import ie.dnd4j.rules.AbilityModifier;
 import ie.dnd4j.rules.AbstractRule;
 
-public class RacialAbilityModifier extends AbstractRule implements AbilityModifier {
+public class RacialAbilityModifierRule extends AbstractRule implements AbilityModifier {
    
     
     private Map<Ability, Integer> abilities;
     
-    public RacialAbilityModifier(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+    public RacialAbilityModifierRule(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
 	abilities = new HashMap<Ability, Integer>();
 	abilities.put(Ability.STRENGTH, strength);
 	abilities.put(Ability.DEXTERITY, dexterity);

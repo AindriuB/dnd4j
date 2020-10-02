@@ -20,7 +20,7 @@ import ie.dnd4j.items.Item;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.rules.stats.ArmourClassBuffRule;
 import ie.dnd4j.rules.stats.ArmourClassRule;
-import ie.dnd4j.rules.stats.RacialAbilityModifier;
+import ie.dnd4j.rules.stats.RacialAbilityModifierRule;
 import ie.dnd4j.skills.SkillType;
 
 public class CharacterBuilderTest extends JsonFileWriterTest {
@@ -39,7 +39,7 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
     @Before
     public void setUp() {
 	elf = new Race();
-	elf.setRacialAbilityModifier(new RacialAbilityModifier(0,2,0,0,0,0));
+	elf.setRacialAbilityModifier(new RacialAbilityModifierRule(0,2,0,0,0,0));
 	elf.setLanguage(Arrays.asList("common", "elvish"));
 	elf.setName("Elf");
 	elf.setSpeed(30);

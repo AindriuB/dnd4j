@@ -2,7 +2,7 @@ package ie.dnd4j.race;
 
 import java.util.List;
 
-import ie.dnd4j.rules.stats.RacialAbilityModifier;
+import ie.dnd4j.rules.stats.RacialAbilityModifierRule;
 
 public class Race {
     
@@ -14,7 +14,7 @@ public class Race {
     
     private List<String> language;
 
-    private RacialAbilityModifier racialAbilityModifier;
+    private RacialAbilityModifierRule racialAbilityModifier;
 
     public String getName() {
         return name;
@@ -48,11 +48,11 @@ public class Race {
         this.speed = speed;
     }
 
-    public RacialAbilityModifier getRacialAbilityModifier() {
+    public RacialAbilityModifierRule getRacialAbilityModifier() {
         return racialAbilityModifier;
     }
 
-    public void setRacialAbilityModifier(RacialAbilityModifier racialAbilityModifier) {
+    public void setRacialAbilityModifier(RacialAbilityModifierRule racialAbilityModifier) {
         this.racialAbilityModifier = racialAbilityModifier;
     }
 
