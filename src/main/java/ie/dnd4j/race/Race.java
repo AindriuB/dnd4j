@@ -2,9 +2,10 @@ package ie.dnd4j.race;
 
 import java.util.List;
 
+import ie.dnd4j.TagableEntity;
 import ie.dnd4j.rules.stats.RacialAbilityModifierRule;
 
-public class Race {
+public class Race extends TagableEntity {
     
     private String name;
     

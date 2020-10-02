@@ -24,4 +24,9 @@ public abstract class TagableEntity {
 	    this.tags.add(tag);
 	}
     }
+
+    public HashSet<String> getTags() {
+        return tags;
+    }
+    
 }
