@@ -21,6 +21,7 @@ import ie.dnd4j.race.Race;
 import ie.dnd4j.rules.stats.ArmourClassBuffRule;
 import ie.dnd4j.rules.stats.ArmourClassRule;
 import ie.dnd4j.rules.stats.RacialAbilityModifier;
+import ie.dnd4j.skills.SkillType;
 
 public class CharacterBuilderTest extends JsonFileWriterTest {
     
@@ -122,6 +123,49 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
 	
 	assertEquals(elf, character.getRace());
 	
+	writeOutput(character, "src/test/resources/test-output/character.json");
+	
+    }
+    
+    
+    @Test
+    public void testBuild_Skills() {
+	CharacterBuilder builder = CharacterBuilder.getInstance();
+	
+	builder.abilityScores(8, 15, 15, 14, 12, 8);
+	builder.addClass(baseClass);
+	builder.race(elf);
+	builder.attributes(attributes);
+	builder.traits(traits);
+	builder.withSkillProfficiency(SkillType.ACROBATICS);
+	builder.withSkillProfficiency(SkillType.PERCEPTION);
+	builder.withSkillProfficiency(SkillType.STEALTH);
+	builder.withSkillProfficiency(SkillType.SLEIGHT_OF_HAND);
+	builder.withExpertise(SkillType.STEALTH);
+	builder.withExpertise(SkillType.ACROBATICS);
+	
+	PlayerCharacter character = builder.build();
+	
+	
+	assertEquals(8, character.getAbilities().get(Ability.STRENGTH).getTotal());
+	assertEquals(-1, character.getAbilities().get(Ability.STRENGTH).getModifier());
+	assertEquals(17, character.getAbilities().get(Ability.DEXTERITY).getTotal());
+	assertEquals(3, character.getAbilities().get(Ability.DEXTERITY).getModifier());
+	assertEquals(15, character.getAbilities().get(Ability.CONSTITUTION).getTotal());
+	assertEquals(2, character.getAbilities().get(Ability.CONSTITUTION).getModifier());
+	assertEquals(14, character.getAbilities().get(Ability.INTELLIGENCE).getTotal());
+	assertEquals(2, character.getAbilities().get(Ability.INTELLIGENCE).getModifier());
+	assertEquals(12, character.getAbilities().get(Ability.WISDOM).getTotal());
+	assertEquals(1, character.getAbilities().get(Ability.WISDOM).getModifier());
+	assertEquals(8, character.getAbilities().get(Ability.CHARISMA).getTotal());
+	assertEquals(-1, character.getAbilities().get(Ability.CHARISMA).getModifier());
+
+	
+	assertEquals(3, character.getSkills().get(SkillType.PERCEPTION).getScore());
+	assertEquals(5, character.getSkills().get(SkillType.SLEIGHT_OF_HAND).getScore());
+
+	assertEquals(7, character.getSkills().get(SkillType.ACROBATICS).getScore());
+	assertEquals(7, character.getSkills().get(SkillType.STEALTH).getScore());
 
 	writeOutput(character, "src/test/resources/test-output/character.json");
 	

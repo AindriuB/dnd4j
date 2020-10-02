@@ -17,9 +17,15 @@ import ie.dnd4j.items.Item;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.religion.Deity;
 import ie.dnd4j.rules.Rule;
+import ie.dnd4j.rules.stats.AbstractSkillRule;
+import ie.dnd4j.rules.stats.SkillExpertiseRule;
+import ie.dnd4j.rules.stats.SkillProfficiencyRule;
 import ie.dnd4j.search.ArmourPredicate;
 import ie.dnd4j.search.ItemPredicate;
 import ie.dnd4j.search.Search;
+import ie.dnd4j.skills.Skill;
+import ie.dnd4j.skills.SkillType;
+import ie.dnd4j.tables.CharacterAdvancementTable;
 
 public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 
@@ -36,10 +42,14 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
     private Map<String, BaseClass> baseClasses;
 
     private List<BaseItem> items;
+    
+    private List<AbstractSkillRule> skillBonuses;
+    
 
     public CharacterBuilder() {
-	baseClasses = new HashMap<String, BaseClass>();
+	this.baseClasses = new HashMap<String, BaseClass>();
 	this.items = new ArrayList<BaseItem>();
+	this.skillBonuses = new ArrayList<AbstractSkillRule>();
     }
 
    
@@ -52,7 +62,6 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	abilityScores.put(Ability.INTELLIGENCE, new AbilityScore(Ability.INTELLIGENCE, intelligence));
 	abilityScores.put(Ability.WISDOM, new AbilityScore(Ability.WISDOM, wisdom));
 	abilityScores.put(Ability.CHARISMA, new AbilityScore(Ability.CHARISMA, charisma));
-
 	return this;
     }
     
@@ -98,11 +107,21 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
     public void withItem(BaseItem item) {
 	this.items.add(item);
     }
+    
+    public void withSkillProfficiency(SkillType type) {
+	skillBonuses.add(new SkillProfficiencyRule(type));
+    }
+    
+    public void withExpertise(SkillType type) {
+	skillBonuses.add(new SkillExpertiseRule(type));
+    }
 
     public PlayerCharacter build() {
 
 	PlayerCharacter character = new PlayerCharacter();
 	traits.setMovementSpeed(race.getSpeed());
+	character.setLevel(1);
+	character.setProfficiencyBonus(CharacterAdvancementTable.proficienyBonus(character.getLevel()));
 	character.setTraits(traits);
 	character.setAttributes(attributes);
 	character.setRace(race);
@@ -110,12 +129,30 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	character.setClasses(baseClasses);
 	character.setInventory(items);
 	character.setDeity(deity);
-
+	
 	// Apply Racial ability modifiers
 	if (character.getRace() != null) {
 	    character.getRace().getRacialAbilityModifier().applyRule(character);
 	}
 
+	
+	Map<SkillType, Skill> skills = new HashMap<SkillType, Skill>();
+	for(SkillType type : SkillType.values()) {
+	    Skill skill = new Skill();
+	    skill.setType(type);
+	    skill.setBase(character.getAbilities().get(type.getBase()).getModifier());
+	    skill.calculate();
+	    skills.put(type, skill);
+	}
+	character.setSkills(skills);
+	//Apply Bonuses
+	for(AbstractSkillRule rule : skillBonuses) {
+	    rule.applyRule(character);
+	}
+	
+	
+	
+	
 	// Calculate AC
 	// Apply item modifiers
 	List<BaseItem> equipedArmour = Search.findAll(character.getEquipedItems(), new ArmourPredicate());

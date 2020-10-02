@@ -13,6 +13,8 @@ import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.religion.Deity;
+import ie.dnd4j.skills.Skill;
+import ie.dnd4j.skills.SkillType;
 import ie.dnd4j.spells.Spell;
 
 public abstract class BaseEntity {
@@ -46,6 +48,12 @@ public abstract class BaseEntity {
     
     private List<Spell> spells;
     
+    private Map<SkillType, Skill> skills;
+    
+    private int level;
+    
+    private int profficiencyBonus;
+    
     public BaseEntity() {
 	abilities = new HashMap<Ability, AbilityScore>();
 	abilities.put(Ability.STRENGTH, new AbilityScore(Ability.STRENGTH, 8));
@@ -63,7 +71,8 @@ public abstract class BaseEntity {
 	inventory = new ArrayList<BaseItem>();
 	equipedItems = new HashSet<BaseItem>();
 	spells = new ArrayList<Spell>();
-	
+	skills = new HashMap<SkillType, Skill>();
+	level = 1;
     }
     
     
@@ -84,6 +93,8 @@ public abstract class BaseEntity {
 	inventory = new ArrayList<BaseItem>();
 	equipedItems = new HashSet<BaseItem>();
 	spells = new ArrayList<Spell>();
+	skills = new HashMap<SkillType, Skill>();
+	level = 1;
     }
 
 
@@ -255,6 +266,36 @@ public abstract class BaseEntity {
 
     public void setSpells(List<Spell> spells) {
         this.spells = spells;
+    }
+
+
+    public Map<SkillType, Skill> getSkills() {
+        return skills;
+    }
+
+
+    public void setSkills(Map<SkillType, Skill> skills) {
+        this.skills = skills;
+    }
+
+
+    public int getProfficiencyBonus() {
+        return profficiencyBonus;
+    }
+
+
+    public void setProfficiencyBonus(int profficiencyBonus) {
+        this.profficiencyBonus = profficiencyBonus;
+    }
+
+
+    public int getLevel() {
+        return level;
+    }
+
+
+    public void setLevel(int level) {
+        this.level = level;
     }
     
    

@@ -20,17 +20,17 @@
     "racialAbilityModifier" : {
       "dependencies" : [ ],
       "abilityModifiers" : {
-        "STRENGTH" : 0,
-        "CONSTITUTION" : 0,
-        "WISDOM" : 0,
-        "CHARISMA" : 0,
+        "DEXTERITY" : 2,
         "INTELLIGENCE" : 0,
-        "DEXTERITY" : 2
+        "CHARISMA" : 0,
+        "WISDOM" : 0,
+        "STRENGTH" : 0,
+        "CONSTITUTION" : 0
       }
     }
   },
   "attributes" : {
-    "armourClass" : 15,
+    "armourClass" : 0,
     "hitPoints" : 10,
     "speed" : 0,
     "spellDifficultyClass" : 0
@@ -44,24 +44,16 @@
     }
   },
   "abilities" : {
-    "STRENGTH" : {
-      "ability" : "STRENGTH",
-      "bonus" : 0,
-      "total" : 10,
-      "base" : 10,
-      "modifier" : 0,
-      "score" : 10
+    "DEXTERITY" : {
+      "ability" : "DEXTERITY",
+      "bonus" : 2,
+      "total" : 17,
+      "base" : 15,
+      "modifier" : 3,
+      "score" : 15
     },
-    "CONSTITUTION" : {
-      "ability" : "CONSTITUTION",
-      "bonus" : 0,
-      "total" : 12,
-      "base" : 12,
-      "modifier" : 1,
-      "score" : 12
-    },
-    "WISDOM" : {
-      "ability" : "WISDOM",
+    "INTELLIGENCE" : {
+      "ability" : "INTELLIGENCE",
       "bonus" : 0,
       "total" : 14,
       "base" : 14,
@@ -71,80 +63,171 @@
     "CHARISMA" : {
       "ability" : "CHARISMA",
       "bonus" : 0,
+      "total" : 8,
+      "base" : 8,
+      "modifier" : -1,
+      "score" : 8
+    },
+    "WISDOM" : {
+      "ability" : "WISDOM",
+      "bonus" : 0,
+      "total" : 12,
+      "base" : 12,
+      "modifier" : 1,
+      "score" : 12
+    },
+    "STRENGTH" : {
+      "ability" : "STRENGTH",
+      "bonus" : 0,
+      "total" : 8,
+      "base" : 8,
+      "modifier" : -1,
+      "score" : 8
+    },
+    "CONSTITUTION" : {
+      "ability" : "CONSTITUTION",
+      "bonus" : 0,
       "total" : 15,
       "base" : 15,
       "modifier" : 2,
       "score" : 15
-    },
-    "INTELLIGENCE" : {
-      "ability" : "INTELLIGENCE",
-      "bonus" : 0,
-      "total" : 13,
-      "base" : 13,
-      "modifier" : 1,
-      "score" : 13
-    },
-    "DEXTERITY" : {
-      "ability" : "DEXTERITY",
-      "bonus" : 2,
-      "total" : 13,
-      "base" : 11,
-      "modifier" : 1,
-      "score" : 11
     }
   },
   "armourProficincies" : [ ],
   "weaponProficincies" : [ ],
   "toolProficincies" : [ ],
   "languages" : [ ],
-  "inventory" : [ {
-    "name" : "Studded Leather",
-    "slot" : "body",
-    "cost" : 10,
-    "category" : "Armour",
-    "currency" : "gp",
-    "equiped" : true,
-    "rules" : [ {
-      "dependencies" : [ ],
-      "type" : "LIGHT",
-      "armourClass" : 13
-    } ],
-    "armour" : "Light"
-  }, {
-    "name" : "Ring or protection",
-    "slot" : "body",
-    "cost" : 10,
-    "category" : "Ring",
-    "currency" : "gp",
-    "equiped" : true,
-    "rules" : [ {
-      "dependencies" : [ ],
-      "buff" : 1
-    } ]
-  } ],
-  "equipedItems" : [ {
-    "name" : "Studded Leather",
-    "slot" : "body",
-    "cost" : 10,
-    "category" : "Armour",
-    "currency" : "gp",
-    "equiped" : true,
-    "rules" : [ {
-      "dependencies" : [ ],
-      "type" : "LIGHT",
-      "armourClass" : 13
-    } ],
-    "armour" : "Light"
-  }, {
-    "name" : "Ring or protection",
-    "slot" : "body",
-    "cost" : 10,
-    "category" : "Ring",
-    "currency" : "gp",
-    "equiped" : true,
-    "rules" : [ {
-      "dependencies" : [ ],
-      "buff" : 1
-    } ]
-  } ]
+  "inventory" : [ ],
+  "equipedItems" : [ ],
+  "spells" : [ ],
+  "skills" : {
+    "RELIGION" : {
+      "type" : "RELIGION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "PERFORMANCE" : {
+      "type" : "PERFORMANCE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "INVESTIGATION" : {
+      "type" : "INVESTIGATION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "DECPETION" : {
+      "type" : "DECPETION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "STEALTH" : {
+      "type" : "STEALTH",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
+    },
+    "HISTORY" : {
+      "type" : "HISTORY",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "INTIMIDATION" : {
+      "type" : "INTIMIDATION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "NAUTURE" : {
+      "type" : "NAUTURE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "PERSUASION" : {
+      "type" : "PERSUASION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "ACROBATICS" : {
+      "type" : "ACROBATICS",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
+    },
+    "SURVIVAL" : {
+      "type" : "SURVIVAL",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "MEDICINE" : {
+      "type" : "MEDICINE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "ANIMAL_HANDLING" : {
+      "type" : "ANIMAL_HANDLING",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "ATHLETICS" : {
+      "type" : "ATHLETICS",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "SLEIGHT_OF_HAND" : {
+      "type" : "SLEIGHT_OF_HAND",
+      "proficiencyBonus" : 2,
+      "expertise" : false,
+      "base" : 3,
+      "score" : 5
+    },
+    "ARCANA" : {
+      "type" : "ARCANA",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "INSIGHT" : {
+      "type" : "INSIGHT",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "PERCEPTION" : {
+      "type" : "PERCEPTION",
+      "proficiencyBonus" : 2,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 3
+    }
+  },
+  "level" : 1,
+  "profficiencyBonus" : 2
 }

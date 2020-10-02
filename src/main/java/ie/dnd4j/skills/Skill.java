@@ -1,39 +1,66 @@
 package ie.dnd4j.skills;
 
+import ie.dnd4j.Calculation;
 import ie.dnd4j.TagableEntity;
-import ie.dnd4j.abilities.Ability;
 
-public abstract class Skill extends TagableEntity {
+public class Skill extends TagableEntity implements Calculation {
     
-    private String type;
+    private SkillType type;
     
-    private Ability abilityModifier;
+    private int proficiencyBonus;
     
-    private int value;
+    private boolean expertise;
+    
+    private int base;
 
+    private int score;
 
-    public String getType() {
+    public SkillType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(SkillType type) {
         this.type = type;
     }
 
-    public Ability getAbilityModifier() {
-        return abilityModifier;
+    public int getBase() {
+        return base;
     }
 
-    public void setAbilityModifier(Ability abilityModifier) {
-        this.abilityModifier = abilityModifier;
+    public void setBase(int base) {
+        this.base = base;
     }
 
-    public int getValue() {
-        return value;
+    public int getScore() {
+        return score;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getProficiencyBonus() {
+        return proficiencyBonus;
+    }
+
+    public void setProficiencyBonus(int proficiencyBonus) {
+        this.proficiencyBonus = proficiencyBonus;
+    }
+
+    public boolean isExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(boolean expertise) {
+        this.expertise = expertise;
+    }
+
+    @Override
+    public void calculate() {
+	if(expertise) {
+	    proficiencyBonus *= 2;
+	} 
+	this.score = this.base + proficiencyBonus; 
     }
     
     
