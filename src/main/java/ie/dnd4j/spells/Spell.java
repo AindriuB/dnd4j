@@ -5,16 +5,11 @@ import ie.dnd4j.TagableEntity;
 public class Spell extends TagableEntity {
     
     private String classes;
-    
     private String name;
-    
     private String description;
-   
     private String school;
-    
     private String duration;
     private String castTime;
-    
     private String range;
     private Boolean verbalComponent;
     private Boolean somaticComponent;

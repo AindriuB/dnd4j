@@ -13,6 +13,7 @@ import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.religion.Deity;
+import ie.dnd4j.spells.Spell;
 
 public abstract class BaseEntity {
 
@@ -43,6 +44,7 @@ public abstract class BaseEntity {
 
     private HashSet<BaseItem> equipedItems;
     
+    private List<Spell> spells;
     
     public BaseEntity() {
 	abilities = new HashMap<Ability, AbilityScore>();
@@ -60,6 +62,7 @@ public abstract class BaseEntity {
 	classes = new HashMap<String, BaseClass>();
 	inventory = new ArrayList<BaseItem>();
 	equipedItems = new HashSet<BaseItem>();
+	spells = new ArrayList<Spell>();
 	
     }
     
@@ -78,6 +81,9 @@ public abstract class BaseEntity {
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
 	classes = new HashMap<String, BaseClass>();
+	inventory = new ArrayList<BaseItem>();
+	equipedItems = new HashSet<BaseItem>();
+	spells = new ArrayList<Spell>();
     }
 
 
@@ -237,5 +243,20 @@ public abstract class BaseEntity {
     public void setEquipedItems(HashSet<BaseItem> equipedItems) {
         this.equipedItems = equipedItems;
     }
+
+    public void addSpell(Spell spell) {
+	this.spells.add(spell);
+    }
+
+    public List<Spell> getSpells() {
+        return spells;
+    }
+
+
+    public void setSpells(List<Spell> spells) {
+        this.spells = spells;
+    }
+    
+   
        
 }

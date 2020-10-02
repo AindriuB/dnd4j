@@ -3,17 +3,19 @@ package ie.dnd4j.rules.dependencies;
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.character.BaseEntity;
 
-public class StrengthDependency implements Dependency {
+public class AbilityDependency implements Dependency {
 
+    private Ability ability;
     private int check;
     
-    public StrengthDependency(int check) {
+    public AbilityDependency(Ability ability, int check) {
+	this.ability = ability;
 	this.check = check;
     }
     
     @Override
     public boolean checkDependency(BaseEntity entity) {
-	if(entity.getAbilities().get(Ability.STRENGTH).getTotal() >= check) {
+	if(entity.getAbilities().get(ability).getTotal() >= check) {
 	    return true;
 	}
 	return false;
