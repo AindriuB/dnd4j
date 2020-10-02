@@ -20,10 +20,10 @@
     "racialAbilityModifier" : {
       "dependencies" : [ ],
       "abilityModifiers" : {
-        "DEXTERITY" : 2,
         "INTELLIGENCE" : 0,
-        "CHARISMA" : 0,
+        "DEXTERITY" : 2,
         "WISDOM" : 0,
+        "CHARISMA" : 0,
         "STRENGTH" : 0,
         "CONSTITUTION" : 0
       }
@@ -38,20 +38,12 @@
   "classes" : {
     "Rogue" : {
       "type" : "Rogue",
+      "description" : "Rogue",
       "level" : 1,
-      "hitDice" : 8,
-      "description" : "Rogue"
+      "hitDice" : 8
     }
   },
   "abilities" : {
-    "DEXTERITY" : {
-      "ability" : "DEXTERITY",
-      "bonus" : 2,
-      "total" : 17,
-      "base" : 15,
-      "modifier" : 3,
-      "score" : 15
-    },
     "INTELLIGENCE" : {
       "ability" : "INTELLIGENCE",
       "bonus" : 0,
@@ -60,13 +52,13 @@
       "modifier" : 2,
       "score" : 14
     },
-    "CHARISMA" : {
-      "ability" : "CHARISMA",
-      "bonus" : 0,
-      "total" : 8,
-      "base" : 8,
-      "modifier" : -1,
-      "score" : 8
+    "DEXTERITY" : {
+      "ability" : "DEXTERITY",
+      "bonus" : 2,
+      "total" : 17,
+      "base" : 15,
+      "modifier" : 3,
+      "score" : 15
     },
     "WISDOM" : {
       "ability" : "WISDOM",
@@ -75,6 +67,14 @@
       "base" : 12,
       "modifier" : 1,
       "score" : 12
+    },
+    "CHARISMA" : {
+      "ability" : "CHARISMA",
+      "bonus" : 0,
+      "total" : 8,
+      "base" : 8,
+      "modifier" : -1,
+      "score" : 8
     },
     "STRENGTH" : {
       "ability" : "STRENGTH",
@@ -101,6 +101,13 @@
   "equipedItems" : [ ],
   "spells" : [ ],
   "skills" : {
+    "ATHLETICS" : {
+      "type" : "ATHLETICS",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
     "RELIGION" : {
       "type" : "RELIGION",
       "proficiencyBonus" : 0,
@@ -108,12 +115,19 @@
       "base" : 2,
       "score" : 2
     },
-    "PERFORMANCE" : {
-      "type" : "PERFORMANCE",
+    "PERCEPTION" : {
+      "type" : "PERCEPTION",
+      "proficiencyBonus" : 2,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 3
+    },
+    "SURVIVAL" : {
+      "type" : "SURVIVAL",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : -1,
-      "score" : -1
+      "base" : 1,
+      "score" : 1
     },
     "INVESTIGATION" : {
       "type" : "INVESTIGATION",
@@ -122,33 +136,12 @@
       "base" : 2,
       "score" : 2
     },
-    "DECPETION" : {
-      "type" : "DECPETION",
+    "MEDICINE" : {
+      "type" : "MEDICINE",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : -1,
-      "score" : -1
-    },
-    "STEALTH" : {
-      "type" : "STEALTH",
-      "proficiencyBonus" : 4,
-      "expertise" : true,
-      "base" : 3,
-      "score" : 7
-    },
-    "HISTORY" : {
-      "type" : "HISTORY",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 2,
-      "score" : 2
-    },
-    "INTIMIDATION" : {
-      "type" : "INTIMIDATION",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : -1,
-      "score" : -1
+      "base" : 1,
+      "score" : 1
     },
     "NAUTURE" : {
       "type" : "NAUTURE",
@@ -164,26 +157,19 @@
       "base" : -1,
       "score" : -1
     },
-    "ACROBATICS" : {
-      "type" : "ACROBATICS",
-      "proficiencyBonus" : 4,
-      "expertise" : true,
-      "base" : 3,
-      "score" : 7
-    },
-    "SURVIVAL" : {
-      "type" : "SURVIVAL",
+    "DECPETION" : {
+      "type" : "DECPETION",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : 1,
-      "score" : 1
+      "base" : -1,
+      "score" : -1
     },
-    "MEDICINE" : {
-      "type" : "MEDICINE",
+    "PERFORMANCE" : {
+      "type" : "PERFORMANCE",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : 1,
-      "score" : 1
+      "base" : -1,
+      "score" : -1
     },
     "ANIMAL_HANDLING" : {
       "type" : "ANIMAL_HANDLING",
@@ -192,12 +178,33 @@
       "base" : 1,
       "score" : 1
     },
-    "ATHLETICS" : {
-      "type" : "ATHLETICS",
+    "HISTORY" : {
+      "type" : "HISTORY",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : -1,
-      "score" : -1
+      "base" : 2,
+      "score" : 2
+    },
+    "STEALTH" : {
+      "type" : "STEALTH",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
+    },
+    "INSIGHT" : {
+      "type" : "INSIGHT",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "ACROBATICS" : {
+      "type" : "ACROBATICS",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
     },
     "SLEIGHT_OF_HAND" : {
       "type" : "SLEIGHT_OF_HAND",
@@ -213,19 +220,12 @@
       "base" : 2,
       "score" : 2
     },
-    "INSIGHT" : {
-      "type" : "INSIGHT",
+    "INTIMIDATION" : {
+      "type" : "INTIMIDATION",
       "proficiencyBonus" : 0,
       "expertise" : false,
-      "base" : 1,
-      "score" : 1
-    },
-    "PERCEPTION" : {
-      "type" : "PERCEPTION",
-      "proficiencyBonus" : 2,
-      "expertise" : false,
-      "base" : 1,
-      "score" : 3
+      "base" : -1,
+      "score" : -1
     }
   },
   "level" : 1,

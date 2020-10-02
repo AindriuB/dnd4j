@@ -1,15 +1,27 @@
 package ie.dnd4j.classes;
 
-public class BaseClass {
+import java.util.List;
+
+import ie.dnd4j.TagableEntity;
+import ie.dnd4j.feats.Feat;
+import ie.dnd4j.rules.Rule;
+
+public abstract class BaseClass extends TagableEntity {
     
+    private String name;
     
     private String type;
     
+    private String description;
+
     private int level;
     
     private int hitDice;
     
-    private String description;
+ 
+    private List<Rule> rules;
+    
+    private List<Feat> features;
     
     
     public BaseClass(String type) {
@@ -46,6 +58,30 @@ public class BaseClass {
 
     public void setHitDice(int hitDice) {
         this.hitDice = hitDice;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Rule> getRules() {
+        return rules;
+    }
+
+    public void setRules(List<Rule> rules) {
+        this.rules = rules;
+    }
+
+    public List<Feat> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<Feat> features) {
+        this.features = features;
     }
     
     

@@ -10,7 +10,7 @@ import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.character.Attributes;
 import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
-import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.classes.PlayerClass;
 import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.items.Item;
@@ -39,7 +39,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 
     private Deity deity;
     
-    private Map<String, BaseClass> baseClasses;
+    private Map<String, PlayerClass> baseClasses;
 
     private List<BaseItem> items;
     
@@ -47,7 +47,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
     
 
     public CharacterBuilder() {
-	this.baseClasses = new HashMap<String, BaseClass>();
+	this.baseClasses = new HashMap<String, PlayerClass>();
 	this.items = new ArrayList<BaseItem>();
 	this.skillBonuses = new ArrayList<AbstractSkillRule>();
     }
@@ -80,7 +80,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	return this;
     }
 
-    public CharacterBuilder addClass(BaseClass baseClass) {
+    public CharacterBuilder addClass(PlayerClass baseClass) {
 	this.baseClasses.put(baseClass.getType(), baseClass);
 	return this;
     }
@@ -100,7 +100,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	return this;
     }
 
-    public void setBaseClasses(Map<String, BaseClass> baseClasses) {
+    public void setBaseClasses(Map<String, PlayerClass> baseClasses) {
 	this.baseClasses = baseClasses;
     }
 

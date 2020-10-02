@@ -9,7 +9,7 @@ import java.util.Map;
 
 import ie.dnd4j.abilities.Ability;
 import ie.dnd4j.abilities.AbilityScore;
-import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.classes.PlayerClass;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
 import ie.dnd4j.religion.Deity;
@@ -30,7 +30,7 @@ public abstract class BaseEntity {
    
     private Attributes attributes;
     
-    private Map<String, BaseClass> classes;
+    private Map<String, PlayerClass> classes;
    
     private Map<Ability, AbilityScore> abilities;
     
@@ -67,7 +67,7 @@ public abstract class BaseEntity {
 	weaponProficincies = Collections.emptyList();
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
-	classes = new HashMap<String, BaseClass>();
+	classes = new HashMap<String, PlayerClass>();
 	inventory = new ArrayList<BaseItem>();
 	equipedItems = new HashSet<BaseItem>();
 	spells = new ArrayList<Spell>();
@@ -89,7 +89,7 @@ public abstract class BaseEntity {
 	weaponProficincies = Collections.emptyList();
 	toolProficincies = Collections.emptyList();
 	languages = Collections.emptyList();
-	classes = new HashMap<String, BaseClass>();
+	classes = new HashMap<String, PlayerClass>();
 	inventory = new ArrayList<BaseItem>();
 	equipedItems = new HashSet<BaseItem>();
 	spells = new ArrayList<Spell>();
@@ -182,12 +182,12 @@ public abstract class BaseEntity {
 
 
 
-    public Map<String, BaseClass> getClasses() {
+    public Map<String, PlayerClass> getClasses() {
         return classes;
     }
 
 
-    public void setClasses(Map<String, BaseClass> classes) {
+    public void setClasses(Map<String, PlayerClass> classes) {
         this.classes = classes;
     }
 

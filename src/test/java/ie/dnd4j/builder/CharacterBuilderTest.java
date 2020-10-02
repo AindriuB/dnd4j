@@ -13,7 +13,7 @@ import ie.dnd4j.character.Alignment;
 import ie.dnd4j.character.Attributes;
 import ie.dnd4j.character.PlayerCharacter;
 import ie.dnd4j.character.Traits;
-import ie.dnd4j.classes.BaseClass;
+import ie.dnd4j.classes.PlayerClass;
 import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.ArmourType;
 import ie.dnd4j.items.Item;
@@ -27,7 +27,7 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
     
     private Race elf;
     
-    private BaseClass baseClass;
+    private PlayerClass baseClass;
     
     private Traits traits;
     
@@ -44,7 +44,7 @@ public class CharacterBuilderTest extends JsonFileWriterTest {
 	elf.setName("Elf");
 	elf.setSpeed(30);
 	
-	baseClass = new BaseClass("Rogue");
+	baseClass = new PlayerClass("Rogue");
 	baseClass.setDescription("Rogue");
 	baseClass.setHitDice(8);
 	baseClass.setLevel(1);
