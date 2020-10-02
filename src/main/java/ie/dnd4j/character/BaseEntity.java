@@ -12,6 +12,7 @@ import ie.dnd4j.abilities.AbilityScore;
 import ie.dnd4j.classes.BaseClass;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Race;
+import ie.dnd4j.religion.Deity;
 
 public abstract class BaseEntity {
 
@@ -20,7 +21,7 @@ public abstract class BaseEntity {
     
     private String vision;
     
-    private String deity;
+    private Deity deity;
     
     private Race race;
    
@@ -101,12 +102,12 @@ public abstract class BaseEntity {
     }
 
 
-    public String getDeity() {
+    public Deity getDeity() {
         return deity;
     }
 
 
-    public void setDeity(String deity) {
+    public void setDeity(Deity deity) {
         this.deity = deity;
     }
 

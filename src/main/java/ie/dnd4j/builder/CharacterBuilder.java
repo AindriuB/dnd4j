@@ -15,6 +15,7 @@ import ie.dnd4j.items.Armour;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.items.Item;
 import ie.dnd4j.race.Race;
+import ie.dnd4j.religion.Deity;
 import ie.dnd4j.rules.Rule;
 import ie.dnd4j.search.ArmourPredicate;
 import ie.dnd4j.search.ItemPredicate;
@@ -30,6 +31,8 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 
     private Race race;
 
+    private Deity deity;
+    
     private Map<String, BaseClass> baseClasses;
 
     private List<BaseItem> items;
@@ -77,6 +80,11 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	this.abilityScores = abilityScores;
 	return this;
     }
+    
+    public CharacterBuilder deity(Deity deity) {
+	this.deity = deity;
+	return this;
+    }
 
     public CharacterBuilder attributes(Attributes attributes) {
 	this.attributes = attributes;
@@ -101,6 +109,7 @@ public class CharacterBuilder extends EntityBuilder<PlayerCharacter> {
 	character.setAbilities(abilityScores);
 	character.setClasses(baseClasses);
 	character.setInventory(items);
+	character.setDeity(deity);
 
 	// Apply Racial ability modifiers
 	if (character.getRace() != null) {

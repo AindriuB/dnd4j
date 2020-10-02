@@ -7,6 +7,26 @@ public enum Alignment {
     private String value;
     
     
+    public static Alignment forString(String value) {
+	for(Alignment type: Alignment.values()) {
+	    if(type.toString().toLowerCase().equals(value.toLowerCase())) {
+		return type;
+	    }
+	}
+	return null;
+    }
+    
+    public static Alignment forTag(String tag) {
+	if(tag == null ) {
+	    return null;
+	}
+	for(Alignment type: Alignment.values()) {
+	    if(type.toString().toLowerCase().equals(tag.toLowerCase())) {
+		return type;
+	    }
+	}
+	return null;
+    }
     private Alignment(String value) {
 	this.value = value;
     }

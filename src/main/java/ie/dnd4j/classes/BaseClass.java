@@ -1,7 +1,5 @@
 package ie.dnd4j.classes;
 
-import java.util.List;
-
 public class BaseClass {
     
     
@@ -12,8 +10,6 @@ public class BaseClass {
     private int hitDice;
     
     private String description;
-    
-    private List<ClassFeature> classFeatures;    
     
     
     public BaseClass(String type) {
@@ -42,14 +38,6 @@ public class BaseClass {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<ClassFeature> getClassFeatures() {
-        return classFeatures;
-    }
-
-    public void setClassFeatures(List<ClassFeature> classFeatures) {
-        this.classFeatures = classFeatures;
     }
 
     public int getHitDice() {
