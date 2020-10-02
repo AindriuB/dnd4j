@@ -3,6 +3,8 @@ package ie.dnd4j;
 import java.util.HashMap;
 import java.util.Map;
 
+import ie.dnd4j.character.background.Background;
+import ie.dnd4j.classes.PlayerClass;
 import ie.dnd4j.feats.Feat;
 import ie.dnd4j.items.BaseItem;
 import ie.dnd4j.race.Language;
@@ -18,6 +20,8 @@ public class Compendium {
     private Map<String, Language> languages;
     private Map<String, BaseItem> items;
     private Map<String, Race> races;
+    private Map<String, PlayerClass> classes;
+    private Map<String, Background> backgrounds;
     private Map<String, Deity> deities;
     private Map<String, Feat> feats;
     
@@ -29,6 +33,9 @@ public class Compendium {
 	races = new HashMap<String, Race>();
 	deities = new HashMap<String, Deity>();
 	feats = new HashMap<String, Feat>();
+	classes = new HashMap<String, PlayerClass>();
+	feats = new HashMap<String, Feat>();
+	backgrounds = new HashMap<String, Background>();
     }
     
     public Compendium() {
@@ -39,6 +46,9 @@ public class Compendium {
 	races = new HashMap<String, Race>();
 	deities = new HashMap<String, Deity>();
 	feats = new HashMap<String, Feat>();
+	classes = new HashMap<String, PlayerClass>();
+	feats = new HashMap<String, Feat>();
+	backgrounds = new HashMap<String, Background>();
     }
     
     public String getSource() {
@@ -88,6 +98,22 @@ public class Compendium {
 
     public void setFeats(Map<String, Feat> feats) {
         this.feats = feats;
+    }
+
+    public Map<String, PlayerClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Map<String, PlayerClass> classes) {
+        this.classes = classes;
+    }
+
+    public Map<String, Background> getBackgrounds() {
+        return backgrounds;
+    }
+
+    public void setBackgrounds(Map<String, Background> backgrounds) {
+        this.backgrounds = backgrounds;
     }
     
     
