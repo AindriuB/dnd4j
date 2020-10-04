@@ -14,18 +14,19 @@
     "alignment" : "CE"
   },
   "race" : {
+    "tags" : [ ],
     "name" : "Elf",
     "speed" : 30,
     "language" : [ "common", "elvish" ],
     "racialAbilityModifier" : {
       "dependencies" : [ ],
       "abilityModifiers" : {
-        "INTELLIGENCE" : 0,
-        "DEXTERITY" : 2,
-        "WISDOM" : 0,
         "CHARISMA" : 0,
+        "DEXTERITY" : 2,
         "STRENGTH" : 0,
-        "CONSTITUTION" : 0
+        "CONSTITUTION" : 0,
+        "WISDOM" : 0,
+        "INTELLIGENCE" : 0
       }
     }
   },
@@ -37,6 +38,7 @@
   },
   "classes" : {
     "Rogue" : {
+      "tags" : [ ],
       "type" : "Rogue",
       "description" : "Rogue",
       "level" : 1,
@@ -44,13 +46,13 @@
     }
   },
   "abilities" : {
-    "INTELLIGENCE" : {
-      "ability" : "INTELLIGENCE",
+    "CHARISMA" : {
+      "ability" : "CHARISMA",
       "bonus" : 0,
-      "total" : 14,
-      "base" : 14,
-      "modifier" : 2,
-      "score" : 14
+      "total" : 8,
+      "base" : 8,
+      "modifier" : -1,
+      "score" : 8
     },
     "DEXTERITY" : {
       "ability" : "DEXTERITY",
@@ -59,22 +61,6 @@
       "base" : 15,
       "modifier" : 3,
       "score" : 15
-    },
-    "WISDOM" : {
-      "ability" : "WISDOM",
-      "bonus" : 0,
-      "total" : 12,
-      "base" : 12,
-      "modifier" : 1,
-      "score" : 12
-    },
-    "CHARISMA" : {
-      "ability" : "CHARISMA",
-      "bonus" : 0,
-      "total" : 8,
-      "base" : 8,
-      "modifier" : -1,
-      "score" : 8
     },
     "STRENGTH" : {
       "ability" : "STRENGTH",
@@ -91,6 +77,22 @@
       "base" : 15,
       "modifier" : 2,
       "score" : 15
+    },
+    "WISDOM" : {
+      "ability" : "WISDOM",
+      "bonus" : 0,
+      "total" : 12,
+      "base" : 12,
+      "modifier" : 1,
+      "score" : 12
+    },
+    "INTELLIGENCE" : {
+      "ability" : "INTELLIGENCE",
+      "bonus" : 0,
+      "total" : 14,
+      "base" : 14,
+      "modifier" : 2,
+      "score" : 14
     }
   },
   "armourProficincies" : [ ],
@@ -101,14 +103,80 @@
   "equipedItems" : [ ],
   "spells" : [ ],
   "skills" : {
+    "PERFORMANCE" : {
+      "tags" : [ ],
+      "type" : "PERFORMANCE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "INVESTIGATION" : {
+      "tags" : [ ],
+      "type" : "INVESTIGATION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "INTIMIDATION" : {
+      "tags" : [ ],
+      "type" : "INTIMIDATION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
     "ATHLETICS" : {
+      "tags" : [ ],
       "type" : "ATHLETICS",
       "proficiencyBonus" : 0,
       "expertise" : false,
       "base" : -1,
       "score" : -1
     },
+    "ANIMAL_HANDLING" : {
+      "tags" : [ ],
+      "type" : "ANIMAL_HANDLING",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "NAUTURE" : {
+      "tags" : [ ],
+      "type" : "NAUTURE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "ARCANA" : {
+      "tags" : [ ],
+      "type" : "ARCANA",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 2,
+      "score" : 2
+    },
+    "SURVIVAL" : {
+      "tags" : [ ],
+      "type" : "SURVIVAL",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "ACROBATICS" : {
+      "tags" : [ ],
+      "type" : "ACROBATICS",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
+    },
     "RELIGION" : {
+      "tags" : [ ],
       "type" : "RELIGION",
       "proficiencyBonus" : 0,
       "expertise" : false,
@@ -116,112 +184,64 @@
       "score" : 2
     },
     "PERCEPTION" : {
+      "tags" : [ ],
       "type" : "PERCEPTION",
       "proficiencyBonus" : 2,
       "expertise" : false,
       "base" : 1,
       "score" : 3
     },
-    "SURVIVAL" : {
-      "type" : "SURVIVAL",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 1,
-      "score" : 1
-    },
-    "INVESTIGATION" : {
-      "type" : "INVESTIGATION",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 2,
-      "score" : 2
-    },
-    "MEDICINE" : {
-      "type" : "MEDICINE",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 1,
-      "score" : 1
-    },
-    "NAUTURE" : {
-      "type" : "NAUTURE",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 2,
-      "score" : 2
-    },
-    "PERSUASION" : {
-      "type" : "PERSUASION",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : -1,
-      "score" : -1
-    },
-    "DECPETION" : {
-      "type" : "DECPETION",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : -1,
-      "score" : -1
-    },
-    "PERFORMANCE" : {
-      "type" : "PERFORMANCE",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : -1,
-      "score" : -1
-    },
-    "ANIMAL_HANDLING" : {
-      "type" : "ANIMAL_HANDLING",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 1,
-      "score" : 1
-    },
-    "HISTORY" : {
-      "type" : "HISTORY",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 2,
-      "score" : 2
-    },
-    "STEALTH" : {
-      "type" : "STEALTH",
-      "proficiencyBonus" : 4,
-      "expertise" : true,
-      "base" : 3,
-      "score" : 7
-    },
-    "INSIGHT" : {
-      "type" : "INSIGHT",
-      "proficiencyBonus" : 0,
-      "expertise" : false,
-      "base" : 1,
-      "score" : 1
-    },
-    "ACROBATICS" : {
-      "type" : "ACROBATICS",
-      "proficiencyBonus" : 4,
-      "expertise" : true,
-      "base" : 3,
-      "score" : 7
-    },
     "SLEIGHT_OF_HAND" : {
+      "tags" : [ ],
       "type" : "SLEIGHT_OF_HAND",
       "proficiencyBonus" : 2,
       "expertise" : false,
       "base" : 3,
       "score" : 5
     },
-    "ARCANA" : {
-      "type" : "ARCANA",
+    "PERSUASION" : {
+      "tags" : [ ],
+      "type" : "PERSUASION",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : -1,
+      "score" : -1
+    },
+    "INSIGHT" : {
+      "tags" : [ ],
+      "type" : "INSIGHT",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "MEDICINE" : {
+      "tags" : [ ],
+      "type" : "MEDICINE",
+      "proficiencyBonus" : 0,
+      "expertise" : false,
+      "base" : 1,
+      "score" : 1
+    },
+    "STEALTH" : {
+      "tags" : [ ],
+      "type" : "STEALTH",
+      "proficiencyBonus" : 4,
+      "expertise" : true,
+      "base" : 3,
+      "score" : 7
+    },
+    "HISTORY" : {
+      "tags" : [ ],
+      "type" : "HISTORY",
       "proficiencyBonus" : 0,
       "expertise" : false,
       "base" : 2,
       "score" : 2
     },
-    "INTIMIDATION" : {
-      "type" : "INTIMIDATION",
+    "DECPETION" : {
+      "tags" : [ ],
+      "type" : "DECPETION",
       "proficiencyBonus" : 0,
       "expertise" : false,
       "base" : -1,
