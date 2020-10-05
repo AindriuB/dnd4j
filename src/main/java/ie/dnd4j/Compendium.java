@@ -1,6 +1,8 @@
 package ie.dnd4j;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import ie.dnd4j.character.background.Background;
@@ -24,7 +26,7 @@ public class Compendium {
     private Map<String, Background> backgrounds;
     private Map<String, Deity> deities;
     private Map<String, Feat> feats;
-    
+    private List<String> sources;
     public Compendium(String source) {
 	this.source = source;
 	spells = new HashMap<String, Spell>();
@@ -36,6 +38,7 @@ public class Compendium {
 	classes = new HashMap<String, PlayerClass>();
 	feats = new HashMap<String, Feat>();
 	backgrounds = new HashMap<String, Background>();
+	sources = new ArrayList<String>();
     }
     
     public Compendium() {
@@ -49,6 +52,7 @@ public class Compendium {
 	classes = new HashMap<String, PlayerClass>();
 	feats = new HashMap<String, Feat>();
 	backgrounds = new HashMap<String, Background>();
+	sources = new ArrayList<String>();
     }
     
     public String getSource() {
@@ -114,6 +118,14 @@ public class Compendium {
 
     public void setBackgrounds(Map<String, Background> backgrounds) {
         this.backgrounds = backgrounds;
+    }
+
+    public List<String> getSources() {
+        return sources;
+    }
+
+    public void setSources(List<String> sources) {
+        this.sources = sources;
     }
     
     
